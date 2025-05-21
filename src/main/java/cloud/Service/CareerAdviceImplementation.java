@@ -15,6 +15,7 @@ public class CareerAdviceImplementation implements CareerAdviceService{
     private static final Logger logger = LoggerFactory.getLogger(CareerAdviceImplementation.class);
 
 
+
     public CareerAdviceImplementation(OpenAiChatModel chatModel, CareerAdviceCRUD careerAdviceCRUD) {
         this.chatModel = chatModel;
         this.careerAdviceCRUD = careerAdviceCRUD;
@@ -36,7 +37,7 @@ public class CareerAdviceImplementation implements CareerAdviceService{
         logger.info("[LLM Prompt Response]: {}", PromptResponse);
 
 
-        String PromptToSend = "Bro i want a brief answer of advice career for this request: The result should be in a simple, natural language answer, without any Markdown formatting, bullet points, or line breaks — just plain text."
+        String PromptToSend = "I want a brief answer of advice career for this request: The result should be in a simple, natural language answer, without any Markdown formatting, bullet points, or line breaks — just plain text."
                 + PromptResponse;
         logger.debug("[Prompt Stage 2] Final Prompt Sent to LLM: {}", PromptToSend);
 
